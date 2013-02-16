@@ -1,0 +1,25 @@
+<h1>Edit room</h1>
+
+<form id="edit-room" name="room">
+  <div class="field">
+    <label for="name"> name:</label>
+    <input type="text" name="name" id="name" value="<%= name %>" >
+  </div>
+
+  <div class="field">
+    <label for="max_user"> max_user:</label>
+    <input type="text" name="max_user" id="max_user" value="<%= max_user %>" >
+  </div>
+
+  <div class="field">
+    <label for="host_id"> host_id:</label>
+    <input type="text" name="host_id" id="host_id" value="<%= host_id %>" >
+  </div>
+
+  <div class="actions">
+    <input type="submit" value="Update Room" />
+  </div>
+
+</form>
+
+<a href="#/index">Back</a>

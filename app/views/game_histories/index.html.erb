@@ -1,0 +1,35 @@
+<h1>Listing game_histories</h1>
+
+<table>
+  <tr>
+    <th>Room</th>
+    <th>Turn no</th>
+    <th>Attacker</th>
+    <th>Target</th>
+    <th>Coordinate x</th>
+    <th>Coordinate y</th>
+    <th>Status</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @game_histories.each do |game_history| %>
+  <tr>
+    <td><%= game_history.room_id %></td>
+    <td><%= game_history.turn_no %></td>
+    <td><%= game_history.attacker_id %></td>
+    <td><%= game_history.target_id %></td>
+    <td><%= game_history.coordinate_x %></td>
+    <td><%= game_history.coordinate_y %></td>
+    <td><%= game_history.status %></td>
+    <td><%= link_to 'Show', game_history %></td>
+    <td><%= link_to 'Edit', edit_game_history_path(game_history) %></td>
+    <td><%= link_to 'Destroy', game_history, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Game history', new_game_history_path %>

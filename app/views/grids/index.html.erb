@@ -1,0 +1,14 @@
+<script type="text/javascript">
+  $(function() {
+
+    alert('start bb');
+    window.router = new Battleship.Routers.GridsRouter({grids: <%= @grids.to_json.html_safe -%>});
+    Backbone.history.start();
+
+  });
+</script>
+
+
+<div id="grids"></div>
+
+

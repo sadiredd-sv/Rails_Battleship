@@ -1,0 +1,10 @@
+<div class="chat-message">
+    <%
+        var room_id_tmp = 'broadcast';
+        if (room_id != null) {
+            room_id_tmp = room_id;
+        }
+    %>
+    <%= current_user.name %>@[<%= room_id_tmp %>] <%= message %>
+</div>
+

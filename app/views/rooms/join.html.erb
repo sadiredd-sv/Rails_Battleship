@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Max Users:</b>
+  <%= @room.max_user %>
+</p>
+
+<p>
+  <b>Occupancy:</b>
+  <%= @room.occupancy %>
+</p>
+
+
+<%= link_to 'Back', list_rooms_path %>

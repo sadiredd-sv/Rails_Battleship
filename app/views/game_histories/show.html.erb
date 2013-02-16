@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Room:</b>
+  <%= @game_history.room_id %>
+</p>
+
+<p>
+  <b>Turn no:</b>
+  <%= @game_history.turn_no %>
+</p>
+
+<p>
+  <b>Attacker:</b>
+  <%= @game_history.attacker_id %>
+</p>
+
+<p>
+  <b>Target:</b>
+  <%= @game_history.target_id %>
+</p>
+
+<p>
+  <b>Coordinate x:</b>
+  <%= @game_history.coordinate_x %>
+</p>
+
+<p>
+  <b>Coordinate y:</b>
+  <%= @game_history.coordinate_y %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @game_history.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_game_history_path(@game_history) %> |
+<%= link_to 'Back', game_histories_path %>

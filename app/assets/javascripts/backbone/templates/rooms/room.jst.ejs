@@ -1,0 +1,35 @@
+
+<div class="row-fluid">
+
+  <div id="room-style">
+    <div class="gamename" >
+        <% if(status == "locked" ){ %>
+            <i class="icon-lock"></i>
+        <% }else{%>
+            <i class="icon-home"></i><a href="#/<%= id %>">
+        <% }%>
+        <%= name %></a>
+    </div>
+    </div>
+
+
+    <div class="span2 status"><%= occupancy %>/<%= max_user %></div>
+
+    <!--<div class="span2"><%= status %></div>-->
+
+    <% if(!isJoin){ %>
+        <% if(status != "open"){ %>
+            <div>Join</div>
+        <% }else{ %>
+            <div class="span2"><a href="#/<%= id %>/join">Join</a></div>
+        <% } %>
+    <% }else{ %>
+        <% if(status == "locked" ){ %>
+
+        <% }else{%>
+            <div class="span2"><a href="#/<%= id %>/leave">Leave</a></div>
+        <% }%>
+        <div class="span4"><a href="#/<%= id %>"><i class="icon-arrow-right"></a></div>
+    <% } %>
+
+</div>

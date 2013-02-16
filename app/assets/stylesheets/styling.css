@@ -1,0 +1,22 @@
+
+
+#rooms-table .status{
+    padding-left:30px;
+}
+
+#room-style{
+    float:left;
+}
+
+#room-style .gamename {
+    float:left;
+
+}
+
+
+#StatusView .status-list {
+    font-family: "Palatino Linotype";
+    font-style: italic;
+    color: blue;
+    font-size: 20px;
+}

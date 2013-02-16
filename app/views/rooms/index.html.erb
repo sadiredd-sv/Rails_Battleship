@@ -1,0 +1,59 @@
+<script type="text/javascript">
+  $(function() {
+
+//    alert('start bb');
+    window.router = new Battleship.Routers.RoomsRouter({
+                                                        current_user: <%= current_user.to_json.html_safe %>
+                                                      });
+//    window.router = new Battleship.Routers.RoomsRouter();
+    Backbone.history.start();
+    $('#fireTarget').click(function(){
+       console.log(this)
+    });
+  });
+
+</script>
+
+
+
+<div class="container-fluid">
+  <div id="row0" class="row-fluid">
+    <div id="user_profile" class="span2">
+
+    </div>
+    <div id="the_rooms" class="span6">
+      <div id="rooms"></div>
+    </div>
+    <div id="chat" class="span4">
+      <div id="ChatPanelView"></div>
+    </div>
+  </div>
+  <div id="row1" class="row-fluid">
+    <div id="deploy" class="span4">
+      <div id="DeployPanelView"></div>
+    </div>
+    <div id="others"  class="span6 offset1">
+      <div id="OthersGridView"></div>
+    </div>
+    <div id="roomChat" class="span4">
+      <div id="roomChatPanelView"></div>
+    </div>
+  </div>
+  <div id= "row2" class="row-fluid">
+    <div id="mygrid"  class="span4">
+      <!--Ships-->
+      <div id="GridListPanelView"></div>
+      <div id="ownGridCanvas"></div>
+    </div>
+    <div id="status"  class="span4">
+      <!--Status-->
+      <div id="StatusView"></div>
+      <!--Create a view for the user to know whom is he targeting at-->
+      <div id="TargetView"></div>
+    </div>
+    <div id="users"  class="span4">
+      <!--Players-->
+      <div id="UserListPanelView"></div>
+    </div>
+  </div>
+</div>

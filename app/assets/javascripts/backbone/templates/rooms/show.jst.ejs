@@ -1,0 +1,37 @@
+<p>
+  <b>Name:</b>
+  <%= name %>
+</p>
+
+<p>
+    <b>Current Users:</b>
+    <%= users.length %>
+</p>
+<p>
+  <b>Max Users:</b>
+  <%= max_user %>
+</p>
+
+<p>
+    <b>Salvo:</b>
+    <%= salvo %>
+</p>
+
+<% for(var i=0; i<users.length; i++) {%>
+<div class="hero-unit">
+
+    <span><%= users[i].name %></span> |
+    <span><%= users[i].email %></span> |
+    <span><%= users[i].status %></span> |
+</div>
+<% } %>
+
+
+
+<a href="#/index">Back</a> |
+<a href="#/<%= id %>/leave">Leave</a> |
+<a href="#/<%= id %>/ready">Ready</a> |
+<a href="#/<%= id %>/play">Play</a> |
+
+
+<div id="timer_counter" style="height: 150px;"></div>

@@ -1,0 +1,30 @@
+<h1>Listing all rooms</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Max Users</th>
+    <th>Occupancy</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @rooms.each do |room| %>
+    <tr>
+      <td><%= room.name %></td>
+      <td><%= room.max_user %></td>
+      <td><%= room.occupancy %></td>
+      <% if room.join?(current_user) %>
+        <td><%= link_to 'Leave', leave_room_path(room) %></td>
+        <td><%= link_to 'Go to the room', room_path(room) %></td>
+      <% else %>
+        <td><%= link_to 'Join', join_room_path(room) %></td>
+      <% end %>
+
+    </tr>
+  <% end %>
+</table>
+
+<br />
+

@@ -1,0 +1,13 @@
+<div class="status-list">
+
+    You are: <%= current_user.name %>
+    </br> </br>
+    <div>
+       current user's turn: <%= current_player_name %>
+    </div>
+    <% if(current_user.id == current_player) {%>
+        Now Your Turn!!
+    <% }%>
+
+    <div id="game_play_timer"></div>
+</div>

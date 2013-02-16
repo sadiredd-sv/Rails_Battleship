@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @grid.user_id %>
+</p>
+
+<p>
+  <b>Coordiate:</b>
+  <%= @grid.coordiate %>
+</p>
+
+<p>
+  <b>Ship:</b>
+  <%= @grid.ship_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_grid_path(@grid) %> |
+<%= link_to 'Back', grids_path %>

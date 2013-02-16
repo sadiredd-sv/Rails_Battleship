@@ -1,0 +1,30 @@
+<html>
+<head>
+  <title>Battleship</title>
+  <style>
+      body { background: #aa1015; }
+      html { background: transparent }
+  </style>
+  <!-- The neat way to inject rail into javascript is to use in this script tag -->
+  <script type="text/javascript">
+    var Globals = {};
+    Globals.user_id = '<%= current_user.id if current_user %>';
+
+  </script>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= render 'layouts/header' %>
+<div class="row">
+  <div id="main">
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
+    <%= yield %>
+  </div>
+</div>
+<!--%= render 'layouts/footer' %-->
+</body>
+</html>

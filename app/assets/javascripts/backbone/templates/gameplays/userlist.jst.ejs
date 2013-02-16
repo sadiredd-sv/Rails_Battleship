@@ -1,0 +1,22 @@
+<div class="user-list">
+  <div class="btn-group" data-toggle="buttons-radio">
+    <% var first = true; %>
+    <% for(var i=0; i<users.length; i++) {%>
+        <% if (users[i].id != current_user.id) {%>
+
+        <% if(first) {%>
+            <button  type="button" id="first" class="btn target-user active" data-toggle="buttons-radio"  data-target="<%= users[i].id %>">
+                <%= users[i].name %> | <%= users[i].status %>
+            </button>
+            <% first = false;%>
+        <% }else{ %>
+          <button  type="button" class="btn target-user" data-toggle="buttons-radio"  data-target="<%= users[i].id %>">
+              <%= users[i].name %> | <%= users[i].status %>
+          </button>
+        <% } %>
+
+        <% } %>
+    <% } %>
+
+  </div>
+</div>

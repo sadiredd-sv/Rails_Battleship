@@ -1,0 +1,25 @@
+<h1>New room</h1>
+
+<form id="new-room" name="room">
+  <div class="field">
+    <label for="name"> Room Name:</label>
+    <input type="text" name="name" id="name" value="<%= name %>" >
+  </div>
+
+  <div class="field">
+    <label for="max_user"> Maximum Number of Users:</label>
+    <input type="text" name="max_user" id="max_user" value="<%= max_user %>" >
+  </div>
+
+<div class="field">
+    <label for="max_user"> Max Salvo</label>
+    <input type="text" name="salvo" id="salvo" value="<%= salvo %>" >
+</div>
+
+  <div class="actions">
+    <input type="submit" value="Create Room" />
+  </div>
+
+</form>
+
+<a href="#/index">Back</a>

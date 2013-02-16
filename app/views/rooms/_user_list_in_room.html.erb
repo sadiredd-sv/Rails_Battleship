@@ -1,0 +1,37 @@
+
+<b>List of players</b>
+<div id="userListInRoom">
+  <% @room.users.each do |u| %>
+    <!-- User data-value to find the element that need to be deleted -->
+    <div class="row-fluid" data-value="<%= u.id%>">
+      <div class="span3">
+        <div class="btn btn-inverse check-to-fire" data-userid="<%= u.id %>" data-username="<%= u.name %>"> <%= u.name %></div>
+      </div>
+      <div class="span2">
+        <div><%= gravatar_for u %></div>
+      </div>
+      <% if current_user.id == @room.host_id.to_i %>
+
+      <% end %>
+      <div class="span1 user-status"><%= @room.user_status(u) %></div>
+    </div>
+  <% end %>
+</div>
+
+<script type="text/javascript">
+  jQuery(function() {
+     // Default to first users
+    var defualtTarget = $("#userTargetList li div")[0]
+     $("#targetedUser").text( $(defualtTarget).data('username') );
+     $("#targetedUser").data("userid", $(defualtTarget).data('userid') );
+
+     $("#userListInRoom").find(".check-to-fire").click(function(){
+        $("#targetedUser").text( $(this).data('username') );
+        $("#targetedUser").data("userid", $(this).data('userid') );
+//        $(this).parent().parent().children().removeClass("selected");
+        $(this).addClass("selected");
+     });
+  });
+
+
+</script>

@@ -1,0 +1,66 @@
+<div class="container">
+
+  <div id="this-carousel-id" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="img/battleship1.jpg" alt="Antennae Galaxies"/>
+      </div>
+      <div class="item">
+        <img src="img/battleship2.jpg" alt="Carina Caterpillar" />
+      </div>
+      <div class="item">
+
+        <img src="img/battleship3.jpg" alt="Light Echo" />
+      </div>
+      <div class="item">
+        <img src="img/battleship4.jpg" alt="Galaxy NGC5866" />
+
+      </div>
+      <div class="item">
+        <img src="img/battleship5.jpg" alt="Galaxy NGC5866" />
+      </div>
+    </div><!-- .carousel-inner -->
+    <!--  next and previous controls here
+href values must reference the id for this carousel -->
+    <a class="carousel-control left" href="#this-carousel-id" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#this-carousel-id" data-slide="next">&rsaquo;</a>
+  </div><!-- .carousel -->
+  <!-- end carousel -->
+
+  <!-- Example row of columns -->
+  <div class="row">
+    <div class="span4">
+      <h2 style="background-color:#4169e1;font-family:algerian;color:#000000;text-align:center">About us</h2>
+      <p class="text-error" style="color:black">RckStrz: Lock: Always looking for the key. Michael: where is Katrina? Santosh: I love Patiala Chicken. Varun: God of interpretation.  Xinfeng: BUSY </p>
+    </div>
+    <div class="span4">
+      <h2 style="background-color:#4169e1;font-family:algerian;color:#000000;text-align:center">Battleship</h2>
+      <p style="color:black">
+        Battleship is a guessing game for two players. It is known worldwide as a pencil and paper game which predates World War I. It was published by Milton Bradley Company in 1931 as the pad-and-pencil game "Broadsides, the Game of Naval Strategy", and as a board game in 1967. </p>
+      <p><a class="btn" href="http://en.wikipedia.org/wiki/Battleship_(game)">Learn More &raquo;</a></p>
+    </div>
+    <div class="span4">
+      <h2 style="background-color:#4169e1;font-family:algerian;color:#000000;text-align:center">How to Play</h2>
+      <p style="color:black">This is a game for two to eight players where players try to guess the location of the five ships that each of your opponents are hiding on a grid. Players take turns choosing an opponent to attack, attempting to choose a coordinate on the grid containing an enemy ship.</p>
+      <p><a class="btn" href="/rules">Learn More &raquo;</a></p>
+    </div>
+  </div>
+
+</div> <!-- /container -->
+
+<!-- Le javascript
+================================================== -->
+<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
+
+<script>
+  $(document).ready(function(){
+    $('.carousel').carousel({
+      interval: 2000
+    });
+  });
+</script>
+
+<div class="span12 offset1">
+  <!--<%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary btn-text" %> -->
+</div>
+

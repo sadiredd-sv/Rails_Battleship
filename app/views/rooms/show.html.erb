@@ -1,0 +1,184 @@
+<script type="text/javascript">
+  // Create global variables so that we can use in
+//  Globals.room_id = '<%= @room.id if @room %>';
+//
+//
+//  // Check if the dispatcher is valid or not
+//  if (window.global == null){
+//    window.global = {};
+//    window.global.dispatcher = new WebSocketRails('localhost:3000/websocket');
+//    console.log('Initialize websocket...')
+//  }else{
+//    if ((window.global.dispatcher == null) || (window.global.dispatcher.pong() == false)){
+//      window.global.dispatcher = new WebSocketRails('localhost:3000/websocket');
+//      console.log('Initialize websocket...')
+//    }
+//  }
+//
+//  if (window.global.channels == null){
+//    window.global.channels = {}
+//  }
+//
+//  // Create a channel for the room
+//  window.global.channels[Globals.room_id] = window.global.dispatcher.subscribe(Globals.room_id);
+//
+//  // Bind join_room event
+//  window.global.channels[Globals.room_id].bind('join_room',function(data){
+//    console.log(data);
+//    var user = data.user;
+//
+//    if(user!=null){
+//      // Update the use list
+//      /*
+//       <div class="row-fluid">
+//         <div class="span1">name</div>
+//         <div class="span3">gravatar</div>
+//          <div class="span3 user-status">readu</div>
+//       </div>
+//       */
+//      var nameDiv =  jQuery('<div/>', {
+//        class: 'span1',
+//        text: user.name
+//      });
+//      var gravatarDiv =  jQuery('<div/>', {
+//        class: 'span3',
+//        text: user.email
+//      });
+//      var statusDiv =  jQuery('<div/>', {
+//        class: 'span3 user-status',
+//        text: user.status
+//      });
+//      var newUserDive = jQuery('<div/>', {
+//        class: 'row-fluid',
+//        "data-value": user.id
+//      });
+//      newUserDive.append(nameDiv);
+//      newUserDive.append(gravatarDiv);
+//      newUserDive.appendTo('#userListInRoom');
+//
+//      // Update chat
+//      jQuery('<div/>', {
+//        id: 'foo',
+//        text: data.message
+//      }).appendTo('#chatChannel');
+//    }
+//  });
+//
+//  // Trigger the channel to join event
+////  window.global.channels[Globals.room_id].trigger('join_room', {room_id: Globals.room_id})
+//
+//  // Bind join_room event
+//  window.global.channels[Globals.room_id].bind('leave_room',function(data){
+//    console.log(data);
+//    var user = data.user;
+//
+//    // Remove the user by getting the data-value
+//    $("#userListInRoom").find('[data-value='+user.id+']').remove();
+//
+//    jQuery('<div/>', {
+//      id: 'foo',
+//      text: data.message
+//    }).appendTo('#chatChannel');
+//  });
+//
+//  // Bind user_status event
+//  window.global.channels[Globals.room_id].bind('user_status',function(data){
+//    console.log(data);
+//    var user = data.user;
+//
+//    // Change the status text
+//    $("#userListInRoom").find('[data-value='+user.id+']').find('.user-status').text(user.status);
+//
+//    jQuery('<div/>', {
+//      id: 'foo',
+//      text: data.message
+//    }).appendTo('#chatChannel');
+//  })
+//
+//  // Bind user_status event
+//  window.global.channels[Globals.room_id].bind('all_ready',function(data){
+//    console.log(data);
+////    var user = data.user;
+////
+////    // Change the status text
+////    $("#userListInRoom").find('[data-value='+user.id+']').find('.user-status').text(user.status);
+//
+//    jQuery('<div/>', {
+//      text: data.message
+//    }).appendTo('#chatChannel');
+//
+//    jQuery('<div/>', {
+//      text: 'Redirecting to the game within 3 seconds'
+//    }).appendTo('#chatChannel');
+//
+//    // Set timeout to redirect to 3 secs
+//    setTimeout( function(){
+//      window.location = Globals.room_id+"/"+"play"
+//    }, 3000);
+//
+//    $('#countdown').countdown({until:$.countdown.UTCDate(-8, 2010,  1 - 1, 1), format: 'S', layout:
+//      '<div id="timer">' + '<hr />'+
+//      '<div id="timer_seconds" class="timer_numbers">{snn}</div>'+
+//      '<div id="timer_labels">'+
+//      '<div id="timer_seconds_label" class="timer_labels">secs</div>'+
+//      '</div>'+
+//      '</div>'
+//    });
+//  });
+
+</script>
+
+
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span10">
+      <div class="row-fluid">
+        <p id="notice"><%= notice %></p>
+      </div>
+      <p>
+        <b>Name:</b>
+        <%= @room.name %>
+      </p>
+
+      <p>
+        <b>Max Users:</b>
+        <%= @room.max_user %>
+      </p>
+
+      <p>
+        <b>Occupancy:</b>
+        <%= @room.occupancy %>
+      </p>
+
+      <p>
+       <%= render 'user_list_in_room' %>
+      </p>
+
+      <div>
+      <!--Timer:-->
+      <!--<div id="countdown"></div>-->
+      </div>
+
+      <div class="row-fluid">
+        <p>
+          <b></b>
+          <%= link_to 'Edit', edit_room_path(@room) %> |
+          <%= link_to 'List joined rooms', rooms_path %>  |
+          <%= link_to 'List all rooms', list_rooms_path %>  |
+
+          <%= link_to 'Leave the room', leave_room_path(@room) %>  |
+          <!--<div class="btn btn-primary change-user-status">Ready to play</div>-->
+          <a href="#" class="change-user-status">Ready to play</a>
+          <!--<div class="btn btn-primary unchange-user-status">Not Ready</div>-->
+
+        </p>
+      </div>
+    </div>
+    <div class="span2">
+      <%= render 'chat' %>
+    </div>
+  </div>
+</div>
+
+
